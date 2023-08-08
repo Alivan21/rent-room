@@ -42,34 +42,34 @@
     <div class="h-full px-5 py-4 overflow-y-auto bg-gray-50">
       <ul class="space-y-2 font-medium">
         <li>
-          <a href="#"
-            class="p-3 flex items-center bg-green-600 font-semibold text-gray-50 rounded-lg group">
+          <a href="/"
+            class="p-3 flex items-center rounded-lg group {{ request()->is('/') ? 'bg-green-600 font-semibold text-gray-50' : 'text-gray-900 hover:bg-green-600 hover:font-semibold hover:text-gray-50' }}">
             <i
-              class="fa-solid fa-house flex-shrink-0 text-lg text-gray-50 transition duration-75 group-hover:text-gray-50"></i>
+              class="{{ request()->is('/') ? 'text-gray-50' : 'text-gray-500' }} fa-solid fa-house flex-shrink-0 text-lg transition duration-75 group-hover:text-gray-50"></i>
             <span class="flex-1 ml-3 whitespace-nowrap">Beranda</span>
           </a>
         </li>
         <li>
-          <a href="#"
-            class="p-3 flex items-center text-gray-900 rounded-lg group hover:bg-green-600 hover:font-semibold hover:text-gray-50">
+          <a href="/room"
+            class="p-3 flex items-center rounded-lg group {{ request()->is('room*') ? 'bg-green-600 font-semibold text-gray-50' : 'text-gray-900 hover:bg-green-600 hover:font-semibold hover:text-gray-50' }}">
             <i
-              class="fa-solid fa-door-open flex-shrink-0 text-lg text-gray-500 transition duration-75 group-hover:text-gray-50"></i>
-            <span class="flex-1 ml-3 whitespace-nowrap">Input Ruangan</span>
+              class="{{ request()->is('room*') ? 'text-gray-50' : 'text-gray-500' }} fa-solid fa-door-open flex-shrink-0 text-lg transition duration-75 group-hover:text-gray-50"></i>
+            <span class="flex-1 ml-3 whitespace-nowrap">Ruangan</span>
           </a>
         </li>
         <li>
-          <a href="#"
-            class="p-3 flex items-center text-gray-900 rounded-lg group hover:bg-green-600 hover:font-semibold hover:text-gray-50">
+          <a href="/booking"
+            class="p-3 flex items-center rounded-lg group {{ request()->is('booking*') ? 'bg-green-600 font-semibold text-gray-50' : 'text-gray-900 hover:bg-green-600 hover:font-semibold hover:text-gray-50' }}">
             <i
-              class="fa-solid fa-clipboard-list flex-shrink-0 text-lg text-gray-500 transition duration-75 group-hover:text-gray-50"></i>
+              class="{{ request()->is('booking*') ? 'text-gray-50' : 'text-gray-500' }} fa-solid fa-clipboard-list flex-shrink-0 text-lg transition duration-75 group-hover:text-gray-50"></i>
             <span class="flex-1 ml-3 whitespace-nowrap">Booking</span>
           </a>
         </li>
         <li>
-          <a href="#"
-            class="p-3 flex items-center text-gray-900 rounded-lg group hover:bg-green-600 hover:font-semibold hover:text-gray-50">
+          <a href="/report"
+            class="p-3 flex items-center rounded-lg group {{ request()->is('report*') ? 'bg-green-600 font-semibold text-gray-50' : 'text-gray-900 hover:bg-green-600 hover:font-semibold hover:text-gray-50' }}">
             <i
-              class="fa-solid fa-chart-line flex-shrink-0 text-lg text-gray-500 transition duration-75 group-hover:text-gray-50"></i>
+              class="{{ request()->is('report*') ? 'text-gray-50' : 'text-gray-500' }} fa-solid fa-clipboard-list flex-shrink-0 text-lg transition duration-75 group-hover:text-gray-50"></i>
             <span class="flex-1 ml-3 whitespace-nowrap">Report</span>
           </a>
         </li>

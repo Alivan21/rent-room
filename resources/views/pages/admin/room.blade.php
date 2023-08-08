@@ -1,43 +1,36 @@
 @extends('layouts.admin')
 @section('content')
   <section class="flex flex-col gap-4 container">
-    <div class="flex gap-3 items-center bg-gray-50 p-3 rounded">
-      <i class="fa-solid fa-user"></i>
-      <h1>Selamat Datang di Halaman Booking Ruangan PT. API, Berikut data Booking Hari ini!</h1>
+    <div class="flex gap-3 items-center justify-between bg-gray-50 p-3 rounded">
+      <div class="flex gap-2 items-center">
+        <i class="fa-solid fa-door-open"></i>
+        <h1>Ini adalah daftar ruangan yang tersedia!</h1>
+      </div>
+      <a href="/room/input" class="outline-none no-underline">
+        <button
+          class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
+          <i class="fa-solid fa-plus mr-3"></i> Input Ruangan
+        </button>
+      </a>
     </div>
     <div class="relative overflow-x-auto">
       <table class="w-full text-sm text-left text-gray-500 rounded">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 rounded">
+        <thead class="text-sm text-gray-700 uppercase bg-gray-50 rounded">
           <tr>
             <th scope="col" class="px-6 py-3">
               #
             </th>
             <th scope="col" class="px-6 py-3">
-              ID Booking
+              Nama Ruangan
             </th>
             <th scope="col" class="px-6 py-3">
-              Tanggal
+              Fasilitas Ruangan
             </th>
             <th scope="col" class="px-6 py-3">
-              Nama
+              Kapasitas Ruangan
             </th>
             <th scope="col" class="px-6 py-3">
-              Ruangan
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Jam Mulai
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Jam Selesai
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Jumlah Orang
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Agenda
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Status
+              Status Ruangan
             </th>
             <th scope="col" class="px-6 py-3">
               Aksi
@@ -50,31 +43,16 @@
               1
             </td>
             <td class="px-6 py-4 ">
-              BO0001
+              Ruang 1
             </td>
             <td class="px-6 py-4 whitespace-nowrap">
-              03 Agustus 2023
+              AC, Proyektor
             </td>
             <td class="px-6 py-4">
-              Super
+              50 Orang
             </td>
             <td class="px-6 py-4">
-              R2
-            </td>
-            <td class="px-6 py-4">
-              07:00
-            </td>
-            <td class="px-6 py-4">
-              10:00
-            </td>
-            <td class="px-6 py-4">
-              10
-            </td>
-            <td class="px-6 py-4">
-              Rapat
-            </td>
-            <td class="px-6 py-4">
-              Selesai
+              Renovasi
             </td>
             <td class="px-6 py-4 flex flex-col gap-2">
               <button type="button"
