@@ -1,10 +1,10 @@
 <header>
   <nav class="relative bg-gray-50 border-gray-200">
     <div class="flex flex-wrap justify-between items-center mx-auto px-6 py-4">
-      <a href="#" class="items-center hidden md:flex">
+      <div class="items-center hidden md:flex py-2 px-3 bg-green-500 rounded-md">
         <img src="{{ asset('img/icon.png') }}" class="h-8 mr-3" alt="Logo" />
-        <span class="self-center text-xl text-gray-900 font-semibold whitespace-nowrap">Ruangan</span>
-      </a>
+        <span class="self-center text-xl text-gray-50 font-bold whitespace-nowrap">Ruangan</span>
+      </div>
       <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar"
         aria-controls="default-sidebar" type="button"
         class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
@@ -19,7 +19,7 @@
       </button>
       <div class="flex items-center">
         <button id="dropdownUser" data-dropdown-toggle="dropdown"
-          class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+          class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
           type="button">
           <i class="fa-solid fa-user"></i>
           <span class="mx-2.5">Admin</span>
@@ -50,10 +50,10 @@
           </a>
         </li>
         <li>
-          <a href="/room"
-            class="p-3 flex items-center rounded-lg group {{ request()->is('room*') ? 'bg-green-600 font-semibold text-gray-50' : 'text-gray-900 hover:bg-green-600 hover:font-semibold hover:text-gray-50' }}">
+          <a href="/admin/room"
+            class="p-3 flex items-center rounded-lg group {{ request()->is('admin/room*') ? 'bg-green-600 font-semibold text-gray-50' : 'text-gray-900 hover:bg-green-600 hover:font-semibold hover:text-gray-50' }}">
             <i
-              class="{{ request()->is('room*') ? 'text-gray-50' : 'text-gray-500' }} fa-solid fa-door-open flex-shrink-0 text-lg transition duration-75 group-hover:text-gray-50"></i>
+              class="{{ request()->is('admin/room*') ? 'text-gray-50' : 'text-gray-500' }} fa-solid fa-door-open flex-shrink-0 text-lg transition duration-75 group-hover:text-gray-50"></i>
             <span class="flex-1 ml-3 whitespace-nowrap">Ruangan</span>
           </a>
         </li>

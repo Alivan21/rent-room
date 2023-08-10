@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RuanganController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +33,5 @@ Route::get('/room/input', function () {
 Route::get('/report', function () {
   return view('pages.admin.report');
 });
+
+Route::resource('/admin/room', RuanganController::class);
