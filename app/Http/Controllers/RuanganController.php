@@ -38,6 +38,9 @@ class RuanganController extends Controller
   public function store(StoreRuanganRequest $request)
   {
     $data = $request->validated();
+    if (!isset($data['fasilitas'])) {
+      $data['fasilitas'] = null;
+    }
     $data['fasilitas'] = implode(',', $data['fasilitas']);
     Ruangan::create($data);
     return redirect()->route('room.index');
