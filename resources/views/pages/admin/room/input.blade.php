@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('content')
+@section('main')
   <section class="flex flex-col gap-4 container">
     <h1 class="text-xl font-semibold">Input Ruangan</h1>
     <hr>
@@ -25,13 +25,13 @@
         <label for="room_facilities" class="block mb-2 text-sm font-medium text-gray-900">
           Fasilitas Ruangan
         </label>
-          @foreach ($facilities as $facility)
-            <div class="flex items-center mb-4">
-              <input id="ac" type="checkbox" name="fasilitas[]" value="{{  $facility->id }}"
-                class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 focus:ring-2">
-              <label for="ac" class="ml-2 text-sm font-medium text-gray-900">{{ $facility->name }}</label>
-            </div>
-          @endforeach
+        @foreach ($facilities as $facility)
+          <div class="flex items-center mb-4">
+            <input id="ac" type="checkbox" name="fasilitas[]" value="{{ $facility->id }}"
+              class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 focus:ring-2">
+            <label for="ac" class="ml-2 text-sm font-medium text-gray-900">{{ $facility->name }}</label>
+          </div>
+        @endforeach
       </div>
       <div>
         <label for="room_status" class="block mb-2 text-sm font-medium text-gray-900 ">

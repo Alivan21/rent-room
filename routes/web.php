@@ -15,22 +15,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+  return view('pages.user.index');
+});
+
+Route::get('/admin/home', function () {
   return view('pages.admin.home');
 });
 
-Route::get('/booking', function () {
+Route::get('/admin/booking', function () {
   return view('pages.admin.book');
 });
 
-Route::get('/room', function () {
+Route::get('/admin/room', function () {
   return view('pages.admin.room');
 });
 
-Route::get('/room/input', function () {
-  return view('pages.admin.room.input');
-});
-
-Route::get('/report', function () {
+Route::get('/admin/report', function () {
   return view('pages.admin.report');
 });
 

@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('content')
+@section('main')
   <section class="flex flex-col gap-4 container">
     <div class="flex gap-3 items-center bg-gray-50 p-3 rounded">
       <i class="fa-solid fa-user"></i>

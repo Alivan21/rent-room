@@ -42,10 +42,10 @@
     <div class="h-full px-5 py-4 overflow-y-auto bg-gray-50">
       <ul class="space-y-2 font-medium">
         <li>
-          <a href="/"
-            class="p-3 flex items-center rounded-lg group {{ request()->is('/') ? 'bg-green-600 font-semibold text-gray-50' : 'text-gray-900 hover:bg-green-600 hover:font-semibold hover:text-gray-50' }}">
+          <a href="/admin/home"
+            class="p-3 flex items-center rounded-lg group {{ request()->is('admin/home') ? 'bg-green-600 font-semibold text-gray-50' : 'text-gray-900 hover:bg-green-600 hover:font-semibold hover:text-gray-50' }}">
             <i
-              class="{{ request()->is('/') ? 'text-gray-50' : 'text-gray-500' }} fa-solid fa-house flex-shrink-0 text-lg transition duration-75 group-hover:text-gray-50"></i>
+              class="{{ request()->is('admin/home') ? 'text-gray-50' : 'text-gray-500' }} fa-solid fa-house flex-shrink-0 text-lg transition duration-75 group-hover:text-gray-50"></i>
             <span class="flex-1 ml-3 whitespace-nowrap">Beranda</span>
           </a>
         </li>
@@ -58,18 +58,18 @@
           </a>
         </li>
         <li>
-          <a href="/booking"
-            class="p-3 flex items-center rounded-lg group {{ request()->is('booking*') ? 'bg-green-600 font-semibold text-gray-50' : 'text-gray-900 hover:bg-green-600 hover:font-semibold hover:text-gray-50' }}">
+          <a href="booking"
+            class="p-3 flex items-center rounded-lg group {{ request()->is('admin/booking*') ? 'bg-green-600 font-semibold text-gray-50' : 'text-gray-900 hover:bg-green-600 hover:font-semibold hover:text-gray-50' }}">
             <i
-              class="{{ request()->is('booking*') ? 'text-gray-50' : 'text-gray-500' }} fa-solid fa-clipboard-list flex-shrink-0 text-lg transition duration-75 group-hover:text-gray-50"></i>
+              class="{{ request()->is('admin/booking*') ? 'text-gray-50' : 'text-gray-500' }} fa-solid fa-clipboard-list flex-shrink-0 text-lg transition duration-75 group-hover:text-gray-50"></i>
             <span class="flex-1 ml-3 whitespace-nowrap">Booking</span>
           </a>
         </li>
         <li>
-          <a href="/report"
-            class="p-3 flex items-center rounded-lg group {{ request()->is('report*') ? 'bg-green-600 font-semibold text-gray-50' : 'text-gray-900 hover:bg-green-600 hover:font-semibold hover:text-gray-50' }}">
+          <a href="/admin/report"
+            class="p-3 flex items-center rounded-lg group {{ request()->is('admin/report*') ? 'bg-green-600 font-semibold text-gray-50' : 'text-gray-900 hover:bg-green-600 hover:font-semibold hover:text-gray-50' }}">
             <i
-              class="{{ request()->is('report*') ? 'text-gray-50' : 'text-gray-500' }} fa-solid fa-clipboard-list flex-shrink-0 text-lg transition duration-75 group-hover:text-gray-50"></i>
+              class="{{ request()->is('admin/report*') ? 'text-gray-50' : 'text-gray-500' }} fa-solid fa-clipboard-list flex-shrink-0 text-lg transition duration-75 group-hover:text-gray-50"></i>
             <span class="flex-1 ml-3 whitespace-nowrap">Report</span>
           </a>
         </li>

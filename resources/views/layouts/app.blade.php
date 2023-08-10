@@ -23,9 +23,7 @@
 
 <body class="bg-gray-50 p-5">
   @yield('header')
-  <main class="bg-white p-5 rounded h-screen sm:ml-64">
-    @yield('content')
-  </main>
+  @yield('content')
   @yield('footer')
 </body>
 
