@@ -25,16 +25,13 @@
         <label for="room_facilities" class="block mb-2 text-sm font-medium text-gray-900">
           Fasilitas Ruangan
         </label>
-        <div class="flex items-center mb-4">
-          <input id="ac" type="checkbox" name="fasilitas[]" value="AC"
-            class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 focus:ring-2">
-          <label for="ac" class="ml-2 text-sm font-medium text-gray-900">AC</label>
-        </div>
-        <div class="flex items-center">
-          <input id="proyektor" type="checkbox" name="fasilitas[]" value="Proyektor"
-            class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 focus:ring-2">
-          <label for="proyektor" class="ml-2 text-sm font-medium text-gray-900">Proyektor</label>
-        </div>
+          @foreach ($facilities as $facility)
+            <div class="flex items-center mb-4">
+              <input id="ac" type="checkbox" name="fasilitas[]" value="{{  $facility->id }}"
+                class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 focus:ring-2">
+              <label for="ac" class="ml-2 text-sm font-medium text-gray-900">{{ $facility->name }}</label>
+            </div>
+          @endforeach
       </div>
       <div>
         <label for="room_status" class="block mb-2 text-sm font-medium text-gray-900 ">

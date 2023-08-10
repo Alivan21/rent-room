@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreRuanganRequest;
+use App\Models\Facility;
+use App\Models\FacilityRoom;
 use App\Models\Ruangan;
 use Illuminate\Http\Request;
 
@@ -26,7 +28,8 @@ class RuanganController extends Controller
    */
   public function create()
   {
-    return view('pages.admin.room.input');
+    $facilities = Facility::all();
+    return view('pages.admin.room.input', compact('facilities'));
   }
 
   /**
@@ -38,11 +41,22 @@ class RuanganController extends Controller
   public function store(StoreRuanganRequest $request)
   {
     $data = $request->validated();
-    if (!isset($data['fasilitas'])) {
-      $data['fasilitas'] = null;
+    $ruangan = Ruangan::create($data);
+
+    $facilities = [];
+
+    if($data['fasilitas'] != null) {
+      foreach ($data['fasilitas'] as $facility) {
+        $facilities[]['facility_id'] = $facility;
+      }
+
+      foreach($facilities as $facility) {
+        $data['facility_id'] = $facility['facility_id'];
+        $data['room_id'] = $ruangan->id;
+        FacilityRoom::create($data);
+      }
     }
-    $data['fasilitas'] = implode(',', $data['fasilitas']);
-    Ruangan::create($data);
+
     return redirect()->route('room.index');
   }
 
