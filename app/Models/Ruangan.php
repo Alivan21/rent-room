@@ -19,4 +19,9 @@ class Ruangan extends Model
   {
     return $this->belongsToMany(Facility::class, 'facilities_room', 'room_id', 'facility_id');
   }
+
+  public function booking()
+  {
+    return $this->hasMany(Booking::class);
+  }
 }
