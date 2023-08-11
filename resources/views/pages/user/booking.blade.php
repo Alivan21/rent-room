@@ -36,7 +36,7 @@
         <label for="start" class="block mb-2 text-sm font-medium text-gray-900">
           Jam Mulai
         </label>
-        <input type="text" id="start" name="jam_mulai"
+        <input type="time" id="start" name="jam_mulai"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
           required>
       </div>
@@ -44,7 +44,7 @@
         <label for="end" class="block mb-2 text-sm font-medium text-gray-900">
           Jam Selesai
         </label>
-        <input type="text" id="end" name="jam_selesai"
+        <input type="time" id="end" name="jam_selesai"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
           required>
       </div>
@@ -69,6 +69,5 @@
         Submit
       </button>
     </form>
-
   </section>
 @endsection

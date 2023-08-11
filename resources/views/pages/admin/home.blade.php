@@ -42,45 +42,47 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="bg-white border-b font-medium text-gray-900">
-            <td class="px-6 py-4">
-              1
-            </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-              03 Agustus 2023
-            </td>
-            <td class="px-6 py-4">
-              Super
-            </td>
-            <td class="px-6 py-4">
-              R2
-            </td>
-            <td class="px-6 py-4">
-              07:00
-            </td>
-            <td class="px-6 py-4">
-              10:00
-            </td>
-            <td class="px-6 py-4">
-              10
-            </td>
-            <td class="px-6 py-4">
-              Rapat
-            </td>
-            <td class="px-6 py-4">
-              Selesai
-            </td>
-            <td class="px-6 py-4 flex flex-col gap-2">
-              <button type="button"
-                class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm p-2">
-                <i class="fa-solid fa-pen-to-square"></i>
-              </button>
-              <button type="button"
-                class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm p-2">
-                <i class="fa-solid fa-trash-can"></i>
-              </button>
-            </td>
-          </tr>
+          @foreach ($booking as $book)
+            <tr class="bg-white border-b font-medium text-gray-900">
+              <td class="px-6 py-4">
+                {{ $loop->iteration }}
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                {{ $book->tanggal }}
+              </td>
+              <td class="px-6 py-4">
+                {{ $book->nama }}
+              </td>
+              <td class="px-6 py-4">
+                {{ $book->ruangan->nama_ruangan }}
+              </td>
+              <td class="px-6 py-4">
+                {{ $book->jam_mulai }}
+              </td>
+              <td class="px-6 py-4">
+                {{ $book->jam_selesai }}
+              </td>
+              <td class="px-6 py-4">
+                {{ $book->jumlah }}
+              </td>
+              <td class="px-6 py-4">
+                {{ $book->agenda }}
+              </td>
+              <td class="px-6 py-4">
+                {{ $book->status }}
+              </td>
+              <td class="px-6 py-4 flex flex-col gap-2">
+                <button type="button"
+                  class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm p-2">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button type="button"
+                  class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm p-2">
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
+              </td>
+            </tr>
+          @endforeach
         </tbody>
       </table>
     </div>

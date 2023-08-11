@@ -8,8 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Booking extends Model
 {
   use HasFactory;
+  protected $with = ['ruangan'];
+  protected $guarded = ['id'];
 
-  protected $guarded = [
-    'id',
-  ];
+  public function ruangan()
+  {
+    return $this->belongsTo(Ruangan::class);
+  }
 }

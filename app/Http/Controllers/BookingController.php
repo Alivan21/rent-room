@@ -16,9 +16,14 @@ class BookingController extends Controller
    */
   public function index()
   {
-    // $ruangan = Ruangan::all();
-    // $booking = Booking::all();
-    // return view('pages.admin.book', compact('ruangan', 'booking'));
+    $booking = Booking::all();
+    return view('pages.admin.book', compact('booking'));
+  }
+
+  public function home()
+  {
+    $booking = Booking::all();
+    return view('pages.admin.home', compact('booking'));
   }
 
   /**
