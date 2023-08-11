@@ -51,7 +51,7 @@ class BookingController extends Controller
   {
     $data = $request->validated();
     Booking::create($data);
-    return redirect()->route('home');
+    return redirect()->route('user.home');
   }
 
   /**
