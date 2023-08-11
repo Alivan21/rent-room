@@ -1,9 +1,17 @@
 @extends('layouts.main')
 @section('content')
   <section class="flex flex-col gap-8 p-16">
-    <div class="items-center flex py-2 px-3 bg-green-500 rounded-md w-fit">
-      <img src="{{ asset('img/icon.png') }}" class="h-8 mr-3" alt="Logo" />
-      <span class="self-center text-xl text-gray-50 font-bold whitespace-nowrap">Ruangan</span>
+    <div class="flex justify-between">
+      <div class="items-center flex py-2 px-3 bg-green-500 rounded-md w-fit">
+        <img src="{{ asset('img/icon.png') }}" class="h-8 mr-3" alt="Logo" />
+        <span class="self-center text-xl text-gray-50 font-bold whitespace-nowrap">Ruangan</span>
+      </div>
+      <a href="{{ route('login') }}" class="no-underline">
+        <button type="button"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5">
+          Login as Admin
+        </button>
+      </a>
     </div>
     <div class="grid grid-cols-2 gap-4">
       @foreach ($rooms as $room)
