@@ -17,7 +17,7 @@ class RuanganController extends Controller
    */
   public function index()
   {
-    $rooms = Ruangan::all();
+    $rooms = Ruangan::with('facilities')->get();
     return view('pages.admin.room', compact('rooms'));
   }
 
@@ -45,12 +45,12 @@ class RuanganController extends Controller
 
     $facilities = [];
 
-    if($data['fasilitas'] != null) {
+    if ($data['fasilitas'] != null) {
       foreach ($data['fasilitas'] as $facility) {
         $facilities[]['facility_id'] = $facility;
       }
 
-      foreach($facilities as $facility) {
+      foreach ($facilities as $facility) {
         $data['facility_id'] = $facility['facility_id'];
         $data['room_id'] = $ruangan->id;
         FacilityRoom::create($data);
@@ -63,10 +63,10 @@ class RuanganController extends Controller
   /**
    * Display the specified resource.
    *
-   * @param  \App\Models\ruangan  $ruangan
+   * @param  \App\Models\Ruangan  $ruangan
    * @return \Illuminate\Http\Response
    */
-  public function show(ruangan $ruangan)
+  public function show(Ruangan $ruangan)
   {
     //
   }
@@ -74,10 +74,10 @@ class RuanganController extends Controller
   /**
    * Show the form for editing the specified resource.
    *
-   * @param  \App\Models\ruangan  $ruangan
+   * @param  \App\Models\Ruangan  $ruangan
    * @return \Illuminate\Http\Response
    */
-  public function edit(ruangan $ruangan)
+  public function edit(Ruangan $ruangan)
   {
     //
   }
@@ -86,10 +86,10 @@ class RuanganController extends Controller
    * Update the specified resource in storage.
    *
    * @param  \Illuminate\Http\Request  $request
-   * @param  \App\Models\ruangan  $ruangan
+   * @param  \App\Models\Ruangan  $ruangan
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, ruangan $ruangan)
+  public function update(Request $request, Ruangan $ruangan)
   {
     //
   }
@@ -97,11 +97,13 @@ class RuanganController extends Controller
   /**
    * Remove the specified resource from storage.
    *
-   * @param  \App\Models\ruangan  $ruangan
+   * @param  \App\Models\Ruangan  $ruangan
    * @return \Illuminate\Http\Response
    */
-  public function destroy(ruangan $ruangan)
+  public function destroy($id)
   {
-    //
+    $ruangan = Ruangan::findOrFail($id);
+    $ruangan->delete();
+    return redirect()->route('room.index');
   }
 }

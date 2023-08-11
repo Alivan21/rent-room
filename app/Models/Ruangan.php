@@ -14,4 +14,9 @@ class Ruangan extends Model
     'kapasitas',
     'status',
   ];
+
+  public function facilities()
+  {
+    return $this->belongsToMany(Facility::class, 'facilities_room', 'room_id', 'facility_id');
+  }
 }

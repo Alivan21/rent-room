@@ -47,11 +47,12 @@
                 {{ $room->nama_ruangan }}
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-                @if ($room->fasilitas !== null)
-                  {{ $room->fasilitas }}
-                @else
-                  -
-                @endif
+                @foreach ($room->facilities as $facility)
+                  <span
+                    class="inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-white bg-green-500 rounded-full">
+                    {{ $facility->name }}
+                  </span>
+                @endforeach
               </td>
               <td class="px-6 py-4">
                 {{ $room->kapasitas }}
@@ -64,10 +65,15 @@
                   class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm p-2">
                   <i class="fa-solid fa-pen-to-square"></i>
                 </button>
-                <button type="button"
-                  class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm p-2">
-                  <i class="fa-solid fa-trash-can"></i>
-                </button>
+                <form action="{{ route('room.destroy', $room->id) }}" method="POST">
+                  @csrf
+                  @method('DELETE')
+                  <input type="hidden" name="_method" value="DELETE" class="d-none">
+                  <button type="submit"
+                    class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm p-2">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+                </form>
               </td>
             </tr>
           @endforeach

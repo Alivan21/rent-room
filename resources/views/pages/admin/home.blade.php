@@ -13,9 +13,6 @@
               #
             </th>
             <th scope="col" class="px-6 py-3">
-              ID
-            </th>
-            <th scope="col" class="px-6 py-3">
               Tanggal
             </th>
             <th scope="col" class="px-6 py-3">
@@ -48,9 +45,6 @@
           <tr class="bg-white border-b font-medium text-gray-900">
             <td class="px-6 py-4">
               1
-            </td>
-            <td class="px-6 py-4 ">
-              BO0001
             </td>
             <td class="px-6 py-4 whitespace-nowrap">
               03 Agustus 2023

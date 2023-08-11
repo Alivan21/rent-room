@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RuanganController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-  return view('pages.user.index');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/booking', [BookingController::class, 'create'])->name('booking.create');
+Route::post('/booking/store', [BookingController::class, 'store'])->name('booking.store');
 
 Route::get('/admin/home', function () {
   return view('pages.admin.home');
