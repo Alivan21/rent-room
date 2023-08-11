@@ -88,7 +88,8 @@ class RuanganController extends Controller
    */
   public function edit(Ruangan $ruangan)
   {
-    //
+    $facilities = Facility::all();
+    return view('pages.admin.room.edit', compact('ruangan', 'facilities'));
   }
 
   /**
@@ -100,7 +101,8 @@ class RuanganController extends Controller
    */
   public function update(Request $request, Ruangan $ruangan)
   {
-    //
+    Ruangan::findOrFail($ruangan->id)->update($request->all());
+    return redirect()->route('room.index');
   }
 
   /**

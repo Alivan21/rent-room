@@ -28,6 +28,8 @@ Route::group(['middleware' => ['auth']], function () {
   Route::get('/admin/home', [BookingController::class, 'home'])->name('admin.home');
   Route::get('/admin/booking', [BookingController::class, 'index'])->name('admin.booking.index');
   Route::resource('/admin/room', RuanganController::class);
+  Route::get('/admin/room/edit/{id}', [RuanganController::class, 'edit'])->name('room.edit');
+  Route::put('/admin/room/update/{id}', [RuanganController::class, 'update'])->name('room.update');
   Route::get('/admin/report', function () {
     return view('pages.admin.report');
   });

@@ -61,10 +61,12 @@
                 {{ $room->status }}
               </td>
               <td class="px-6 py-4 flex flex-col gap-2">
-                <button type="button"
-                  class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm p-2">
-                  <i class="fa-solid fa-pen-to-square"></i>
-                </button>
+                <a href="{{ route('room.edit', $room->id) }}" class="no-underline">
+                  <button type="button"
+                    class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm p-2 w-full">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  </button>
+                </a>
                 <form action="{{ route('room.destroy', $room->id) }}" method="POST">
                   @csrf
                   @method('DELETE')
