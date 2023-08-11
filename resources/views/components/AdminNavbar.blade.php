@@ -28,7 +28,15 @@
         <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
           <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownUser">
             <li>
-              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Logout</a>
+              <a class="block px-4 py-2 hover:bg-gray-100" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                Logout
+              </a>
+
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+              </form>
             </li>
           </ul>
         </div>

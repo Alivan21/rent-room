@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 @section('content')
   <section class="flex flex-col gap-8 px-16">
     <form action="{{ route('booking.store') }}" method="POST" class="bg-white p-3 rounded-md">

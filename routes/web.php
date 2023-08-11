@@ -3,6 +3,7 @@
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RuanganController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,10 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('user.home');
 Route::get('/booking', [BookingController::class, 'create'])->name('booking.create');
 Route::post('/booking/store', [BookingController::class, 'store'])->name('booking.store');
 
+Auth::routes();
 Route::get('/admin/home', [BookingController::class, 'home'])->name('admin.home');
 Route::get('/admin/booking', [BookingController::class, 'index'])->name('admin.booking.index');
 Route::resource('/admin/room', RuanganController::class);

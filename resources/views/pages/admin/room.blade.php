@@ -70,7 +70,7 @@
                   @method('DELETE')
                   <input type="hidden" name="_method" value="DELETE" class="d-none">
                   <button type="submit"
-                    class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm p-2">
+                    class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm p-2 w-full">
                     <i class="fa-solid fa-trash-can"></i>
                   </button>
                 </form>

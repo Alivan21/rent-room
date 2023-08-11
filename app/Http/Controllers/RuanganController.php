@@ -10,6 +10,15 @@ use Illuminate\Http\Request;
 
 class RuanganController extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
+  public function auth()
+  {
+    $user = auth()->user();
+    return view('home', ['user' => $user]);
+  }
   /**
    * Display a listing of the resource.
    *
