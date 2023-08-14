@@ -52,17 +52,12 @@ class RuanganController extends Controller
     $data = $request->validated();
     $ruangan = Ruangan::create($data);
 
-    $facilities = [];
-
-    if ($data['fasilitas'] != null) {
+    if (isset($data['fasilitas']) && is_array($data['fasilitas'])) {
       foreach ($data['fasilitas'] as $facility) {
-        $facilities[]['facility_id'] = $facility;
-      }
-
-      foreach ($facilities as $facility) {
-        $data['facility_id'] = $facility['facility_id'];
-        $data['room_id'] = $ruangan->id;
-        FacilityRoom::create($data);
+        FacilityRoom::create([
+          'facility_id' => $facility,
+          'room_id' => $ruangan->id,
+        ]);
       }
     }
 
@@ -101,7 +96,14 @@ class RuanganController extends Controller
    */
   public function update(Request $request, Ruangan $ruangan)
   {
-    Ruangan::findOrFail($ruangan->id)->update($request->all());
+    $ruangan->update($request->all());
+
+    // Update related fasilitas
+    $selectedFacilities = $request->input('fasilitas', []); // Get the selected facilities from checkboxes
+
+    // Sync the selected facilities with the Ruangan
+    $ruangan->facilities()->sync($selectedFacilities);
+
     return redirect()->route('room.index');
   }
 

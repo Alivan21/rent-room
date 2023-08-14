@@ -36,9 +36,6 @@
             <th scope="col" class="px-6 py-3">
               Status
             </th>
-            <th scope="col" class="px-6 py-3">
-              Aksi
-            </th>
           </tr>
         </thead>
         <tbody>
@@ -70,16 +67,6 @@
               </td>
               <td class="px-6 py-4">
                 {{ $book->status }}
-              </td>
-              <td class="px-6 py-4 flex flex-col gap-2">
-                <button type="button"
-                  class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm p-2">
-                  <i class="fa-solid fa-pen-to-square"></i>
-                </button>
-                <button type="button"
-                  class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm p-2">
-                  <i class="fa-solid fa-trash-can"></i>
-                </button>
               </td>
             </tr>
           @endforeach

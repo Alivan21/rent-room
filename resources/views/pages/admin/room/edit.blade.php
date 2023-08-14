@@ -3,7 +3,8 @@
   <section class="flex flex-col gap-4 container">
     <h1 class="text-xl font-semibold">Edit Ruangan</h1>
     <hr>
-    <form method="POST" action="{{ route('room.update', ['id' => $ruangan->id]) }}" class="flex flex-col gap-6">
+    <form method="POST" action="{{ route('room.update', ['ruangan' => $ruangan->id]) }}"
+      class="flex flex-col gap-6">
       @method('PUT')
       @csrf
       <div>
